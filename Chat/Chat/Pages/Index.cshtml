@@ -1,30 +1,37 @@
 ﻿@page
-<div class="container">
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-2">User</div>
-        <div class="col-4"><input type="text" id="userInput" /></div>
+<div class="form-row">
+    <div class="form-group col-md-4">
+        <label for="username">Логин</label>
+        <input type="text" class="form-control" id="username" placeholder="Логин">
     </div>
-    <div class="row">
-        <div class="col-2">Message</div>
-        <div class="col-4"><input type="text" id="messageInput" /></div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-4">
+        <label for="password">Пароль</label>
+        <input type="text" class="form-control" id="password" placeholder="Пароль">
     </div>
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-6">
-            <input type="button" id="sendButton" value="Send Message" />
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-4">
+        <a class="nav-link" asp-area="" asp-page="/Registration">Регистрация</a>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-md-4">
+        <input type="button" value="Вход" id="authBut" class="btn btn-primary">
+    </div>
+</div>
+
+<div class="form-row" id="errorAlert" hidden="true">
+    <div class="form-group col-md-6">
+        <div class="alert alert-danger" role="alert">
+            Ошибка, введены неверные данные!
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-12">
-        <hr />
-    </div>
-</div>
-<div class="row">
-    <div class="col-6">
-        <ul id="messagesList"></ul>
-    </div>
-</div>
+
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
-<script src="~/js/chat.js"></script>
+<script src="js/auth.js"></script>

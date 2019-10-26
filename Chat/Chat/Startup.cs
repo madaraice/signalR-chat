@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Chat.Hubs;
+using Chat.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace Chat
 {
@@ -24,6 +27,9 @@ namespace Chat
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<UserContext>(opt =>
+                opt.UseSqlServer(Configuration.GetConnectionString("ChatContext")));
+
             services.AddRazorPages();
             services.AddSignalR();
             services.AddControllers();
@@ -57,6 +63,7 @@ namespace Chat
             {
                 endpoints.MapRazorPages();
                 endpoints.MapHub<ChatHub>("/chatHub");
+                endpoints.MapHub<AuthHub>("/authHub");
                 endpoints.MapControllers();
             });
         }
