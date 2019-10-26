@@ -26,6 +26,7 @@ namespace Chat
         {
             services.AddRazorPages();
             services.AddSignalR();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,11 +43,11 @@ namespace Chat
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            
+            app.UseDefaultFiles();
+
             app.UseStaticFiles();
 
-            app.UseDefaultFiles();
+            app.UseHttpsRedirection();
             
             app.UseRouting();
 
@@ -56,6 +57,7 @@ namespace Chat
             {
                 endpoints.MapRazorPages();
                 endpoints.MapHub<ChatHub>("/chatHub");
+                endpoints.MapControllers();
             });
         }
     }
