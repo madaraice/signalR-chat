@@ -21,11 +21,11 @@ namespace Chat.Hubs
 
             if (user == null)
             {
-                await Clients.Caller.SendAsync("ErrorAuth", userName, password);
+                await Clients.Caller.SendAsync("ErrorAuth");
             }
             else
             {
-                await Clients.Caller.SendAsync("AccessAuth", userName, password);
+                await Clients.Caller.SendAsync("AccessAuth");
             }
         }
     }
