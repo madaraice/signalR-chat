@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Chat.Models;
+using Chat.Tools;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +18,7 @@ namespace Chat.Hubs
         public async Task Auth(string userName, string password)
         {
             var user = await _context.Users
-                .FirstOrDefaultAsync(x => x.Name == userName && x.Password == password);
+                .FirstOrDefaultAsync(x => x.Name == userName && x.Password == PasswordEncryption.Encrypt(password));
 
             if (user == null)
             {

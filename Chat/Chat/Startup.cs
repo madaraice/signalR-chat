@@ -64,6 +64,7 @@ namespace Chat
                 endpoints.MapRazorPages();
                 endpoints.MapHub<ChatHub>("/chatHub");
                 endpoints.MapHub<AuthHub>("/authHub");
+                endpoints.MapHub<RegistrationHub>("/registrationHub");
                 endpoints.MapControllers();
             });
         }

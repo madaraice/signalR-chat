@@ -1,5 +1,7 @@
 ﻿@page
 
+<h1>Я вас категорически приветствую!</h1>
+
 <div class="form-row">
     <div class="form-group col-md-4">
         <label for="username">Логин</label>
@@ -16,7 +18,7 @@
 
 <div class="form-row">
     <div class="form-group col-md-4">
-        <a class="nav-link" asp-area="" asp-page="/Registration">Регистрация</a>
+        <a class="btn btn-secondary" asp-area="" asp-page="/Registration">Регистрация</a>
     </div>
 </div>
 
@@ -27,7 +29,7 @@
 </div>
 
 <div class="form-row" id="errorAlert" hidden="true">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-5">
         <div class="alert alert-danger" role="alert">
             Ошибка, введены неверные данные!
         </div>
