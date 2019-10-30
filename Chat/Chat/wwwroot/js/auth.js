@@ -8,7 +8,9 @@ connection.on("ErrorAuth", function () {
     document.getElementById("errorAlert").hidden = false;
 });
 
-connection.on("AccessAuth", function () {
+connection.on("AccessAuth", function (userName) {
+    document.cookie = "userName=" + userName;
+    alert(document.cookie);
     window.location.replace("/ChatRoom");
 });
 

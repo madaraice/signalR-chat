@@ -26,7 +26,7 @@ namespace Chat.Hubs
             }
             else
             {
-                await Clients.Caller.SendAsync("AccessAuth");
+                await Clients.Caller.SendAsync("AccessAuth", userName);
             }
         }
     }
