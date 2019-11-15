@@ -2,11 +2,25 @@
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
-//Disable send button until connection is established
 document.getElementById("sendButton").disabled = true;
-var userName = document.cookie.substr(9);
-document.getElementById("username").innerHTML += userName;
+const USERNAME = document.cookie.substr(9);
+document.getElementById("username").innerHTML += USERNAME;
 
+// Приветственное сообщение, когда приходит новый юзер
+connection.on("GreetingMessage", function (user) {
+    // Создаем контейнер куда будем помещать элементы th
+    var tr = document.createElement("tr");
+    // Жирный текст с именем юзера
+    var th = document.createElement("th");
+    // Добавляем свойство "жирноты" для имени юзера
+    th.scope = "row"; 
+    var greetingMsg = document.createTextNode(user + " присоединяется к нам!");
+    th.appendChild(greetingMsg);
+    tr.appendChild(th);
+    document.getElementById("messagesList").appendChild(tr);
+});
+
+// Срабатывает, когда пользователь отправляет сообщение в чат
 connection.on("ReceiveMessage", function (user, message) {
     // Создаем контейнер куда будем помещать элементы th и td
     var tr = document.createElement("tr");
@@ -31,15 +45,21 @@ connection.on("ReceiveMessage", function (user, message) {
     document.getElementById("messageInput").value = "";
 });
 
+// Срабатывает при подключении юзера в чат
 connection.start().then(function () {
     document.getElementById("sendButton").disabled = false;
+    connection.invoke("NewUser", USERNAME).catch(function (err) {
+        return console.error(err.toString());
+    });
+
 }).catch(function (err) {
     return console.error(err.toString());
 });
 
+// Срабатывает, когда пользователь отправляет сообщение
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var message = document.getElementById("messageInput").value;
-    connection.invoke("SendMessage", userName, message).catch(function (err) {
+    connection.invoke("SendMessage", USERNAME, message).catch(function (err) {
         return console.error(err.toString());
     });
     event.preventDefault();

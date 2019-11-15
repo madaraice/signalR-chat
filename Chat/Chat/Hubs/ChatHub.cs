@@ -10,5 +10,10 @@ namespace Chat.Hubs
         {
             await Clients.All.SendAsync("ReceiveMessage", user, message);
         }
+        
+        public async Task NewUser(string user)
+        {
+            await Clients.All.SendAsync("GreetingMessage", user);
+        }
     }
 }
