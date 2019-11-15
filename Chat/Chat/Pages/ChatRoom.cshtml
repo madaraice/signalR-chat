@@ -1,29 +1,31 @@
 ﻿@page
-<div class="container">
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-2">User</div>
-        <div class="col-4"><input type="text" id="userInput" /></div>
-    </div>
-    <div class="row">
-        <div class="col-2">Message</div>
-        <div class="col-4"><input type="text" id="messageInput" /></div>
-    </div>
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-6">
-            <input type="button" id="sendButton" value="Send Message" />
-        </div>
+
+<div class="form-row">
+    <div class="form-group col-md-4">
+        <label for="messageInput" id="username">Привет, </label>
+        <input type="text" class="form-control" id="messageInput" placeholder="Скажите что-нибудь в общий чат">
     </div>
 </div>
+
+<div class="form-row">
+    <div class="form-group col-md-4">
+        <input type="button" value="Отправить сообщение" id="sendButton" class="btn btn-outline-primary">
+    </div>
+</div>
+
 <div class="row">
     <div class="col-12">
         <hr />
     </div>
 </div>
+
 <div class="row">
-    <div class="col-6">
-        <ul id="messagesList"></ul>
+    <div class="col-2">
+        <table class="table table-hover table-borderless">
+            <tbody id="messagesList">
+                
+            </tbody>
+        </table>
     </div>
 </div>
 
