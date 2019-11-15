@@ -1,0 +1,27 @@
+﻿@page
+@model Chat.Pages.ChatModel
+@{
+    ViewData["Title"] = "Chat";
+    Layout = "~/Pages/Shared/_ChatLayout.cshtml";
+}
+
+<div class="chat-output" id="chat-output">
+    <div class="user-message">
+        <div class="message">Hi! I'm a bot. What's up?</div>
+    </div>
+</div>
+
+<div class="chat-input">
+    <div class="form-group">
+        <input type="text" class="form-group col-md-7" placeholder="Пишите сообщение сюда">
+        <button type="button" class="btn btn-outline-info">Отправить</button>
+    </div>
+    <!-- <form action="#0" id="user-input-form"> -->
+    <!-- <input type="text" id="user-input" class="user-input" placeholder="Talk to the bot.">  -->
+    <!-- <input type="text" class="form-group col-md-7" aria-describedby="emailHelp" placeholder="Пишите сообщение сюда">
+    <button type="button" class="btn btn-outline-info">Отправить</button> -->
+    <!-- </form> -->
+</div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>

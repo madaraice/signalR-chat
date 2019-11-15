@@ -163,3 +163,5 @@ C:\Users\vladi\Documents\GitHub\signalR-chat\Chat\Chat\obj\Debug\netcoreapp3.0\C
 C:\Users\vladi\Documents\GitHub\signalR-chat\Chat\Chat\obj\Debug\netcoreapp3.0\Razor\Pages\ChatRoom.cshtml.g.cs
 C:\Users\vladi\Documents\GitHub\signalR-chat\Chat\Chat\obj\Debug\netcoreapp3.0\Razor\Pages\Registration.cshtml.g.cs
 C:\Users\vladi\Documents\GitHub\signalR-chat\Chat\Chat\obj\Debug\netcoreapp3.0\Chat.csprojAssemblyReference.cache
+C:\Users\vladi\Documents\GitHub\signalR-chat\Chat\Chat\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_ChatLayout.cshtml.g.cs
+C:\Users\vladi\Documents\GitHub\signalR-chat\Chat\Chat\obj\Debug\netcoreapp3.0\Razor\Pages\Chat.cshtml.g.cs
