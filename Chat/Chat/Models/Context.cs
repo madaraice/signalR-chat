@@ -6,13 +6,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Chat.Models
 {
-    public class UserContext : DbContext
+    public class Context : DbContext
     {
-        public UserContext(DbContextOptions<UserContext> options)
+        public Context(DbContextOptions<Context> options)
             : base(options)
         {
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }

@@ -20,6 +20,33 @@ connection.on("GreetingMessage", function (user) {
     document.getElementById("messagesList").appendChild(tr);
 });
 
+// Загружаем новому пользователю прошлые сообщения
+connection.on("DownloadOtherMessages", function (messagesJson) {
+    var messages = JSON.parse(messagesJson);
+
+    for(var i = 0; i < messages.length; i++)
+    {
+        // Создаем контейнер куда будем помещать элементы th
+        var tr = document.createElement("tr");  
+        // Жирный текст с именем юзера
+        var th = document.createElement("th");
+        // Текст с сообщением
+        var td = document.createElement("td");
+        // Добавляем свойство "жирноты" для имени юзера
+        th.scope = "row"; 
+        
+        var textUserName = document.createTextNode(messages[i].Name + ": ");
+        th.appendChild(textUserName);
+        tr.appendChild(th);
+        
+        var textMessage = document.createTextNode(messages[i].MessageText);
+        td.appendChild(textMessage);
+        tr.appendChild(td);
+        
+        document.getElementById("messagesList").appendChild(tr);
+    }
+});
+
 // Срабатывает, когда пользователь отправляет сообщение в чат
 connection.on("ReceiveMessage", function (user, message) {
     // Создаем контейнер куда будем помещать элементы th и td

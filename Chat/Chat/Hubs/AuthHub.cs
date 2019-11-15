@@ -8,16 +8,17 @@ namespace Chat.Hubs
 {
     public class AuthHub : Hub
     {
-        private readonly UserContext _context;
+        private readonly Context _context;
 
-        public AuthHub(UserContext context)
+        public AuthHub(Context context)
         {
             _context = context;
         }
 
         public async Task Auth(string userName, string password)
         {
-            var user = await _context.Users
+            var user = await _context
+                .Users
                 .FirstOrDefaultAsync(x => x.Name == userName && x.Password == PasswordEncryption.Encrypt(password));
 
             if (user == null)

@@ -11,12 +11,13 @@ namespace Chat.Hubs
 {
     public class RegistrationHub : Hub
     {
-        private readonly UserContext _context;
+        private readonly Context _context;
 
-        public RegistrationHub(UserContext context)
+        public RegistrationHub(Context context)
         {
             _context = context;
         }
+
         public async Task Registration(string userName, string password, string againPassword)
         {
             if (string.IsNullOrEmpty(userName) || string.IsNullOrWhiteSpace(userName)

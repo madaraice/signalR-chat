@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Chat.Migrations
 {
-    [DbContext(typeof(UserContext))]
+    [DbContext(typeof(Context))]
     [Migration("20191026211352_InitialCreate")]
     partial class InitialCreate
     {
