@@ -8,19 +8,25 @@ var userName = document.cookie.substr(9);
 document.getElementById("username").innerHTML += userName;
 
 connection.on("ReceiveMessage", function (user, message) {
+    // Создаем контейнер куда будем помещать элементы th и td
     var tr = document.createElement("tr");
-
+    // Жирный текст с именем юзера
     var th = document.createElement("th");
+    // Текст с сообщением
     var td = document.createElement("td");
-    th.scope = "row";
-    var textUserName = document.createTextNode(userName + ": ");
-    th.appendChild(textUserName);
-
-    var text = document.createTextNode(message);
-    td.appendChild(text);
     
+    // Добавляем свойство "жирноты" для имени юзера
+    th.scope = "row"; 
+    var textUserName = document.createTextNode(user + ": ");
+    th.appendChild(textUserName);
     tr.appendChild(th);
+
+    // Сообщение юзера
+    var textMessage = document.createTextNode(message);
+    td.appendChild(textMessage);
     tr.appendChild(td);
+
+    // Добавляем готовый контейнер с элементами
     document.getElementById("messagesList").appendChild(tr);
     document.getElementById("messageInput").value = "";
 });
