@@ -1,5 +1,10 @@
 ﻿"use strict";
 
+// Если страница была обновлена, то нужно перенаправить пользователя на страницу авторизации
+if (performance.navigation.type) {
+    window.location.replace("/Index");
+}
+
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
 document.getElementById("sendButton").disabled = true;
@@ -7,7 +12,7 @@ const USERNAME = document.cookie.substr(9);
 document.getElementById("username").innerHTML += USERNAME;
 
 // Приветственное сообщение, когда приходит новый юзер
-connection.on("GreetingMessage", function (user) {
+connection.on("GreetingMessage", function (user, userListServer) {
     // Создаем контейнер куда будем помещать элементы th
     var tr = document.createElement("tr");
     // Жирный текст с именем юзера
@@ -18,6 +23,18 @@ connection.on("GreetingMessage", function (user) {
     th.appendChild(greetingMsg);
     tr.appendChild(th);
     document.getElementById("messagesList").appendChild(tr);
+
+    // Вывод пользователей находящихся в чате
+    //for (var i = 0; i < userListServer.length; i++)
+    //{
+    //    // li элемент с именем пользователя
+    //    var li = document.createElement("li");
+        
+    //    var textUserName = document.createTextNode(userList[i]);
+    //    li.appendChild(textUserName);
+        
+    //    document.getElementById("userList").appendChild(li);
+    //}
 });
 
 // Загружаем новому пользователю прошлые сообщения
