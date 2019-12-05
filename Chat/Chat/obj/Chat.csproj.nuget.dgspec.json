@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vladi\\Documents\\GitHub\\signalR-chat\\Chat\\Chat\\Chat.csproj": {}
+    "C:\\Users\\vlad\\Documents\\GitHub\\signalR-chat\\Chat\\Chat\\Chat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vladi\\Documents\\GitHub\\signalR-chat\\Chat\\Chat\\Chat.csproj": {
+    "C:\\Users\\vlad\\Documents\\GitHub\\signalR-chat\\Chat\\Chat\\Chat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vladi\\Documents\\GitHub\\signalR-chat\\Chat\\Chat\\Chat.csproj",
+        "projectUniqueName": "C:\\Users\\vlad\\Documents\\GitHub\\signalR-chat\\Chat\\Chat\\Chat.csproj",
         "projectName": "Chat",
-        "projectPath": "C:\\Users\\vladi\\Documents\\GitHub\\signalR-chat\\Chat\\Chat\\Chat.csproj",
-        "packagesPath": "C:\\Users\\vladi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vladi\\Documents\\GitHub\\signalR-chat\\Chat\\Chat\\obj\\",
+        "projectPath": "C:\\Users\\vlad\\Documents\\GitHub\\signalR-chat\\Chat\\Chat\\Chat.csproj",
+        "packagesPath": "C:\\Users\\vlad\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vlad\\Documents\\GitHub\\signalR-chat\\Chat\\Chat\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\vladi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\vlad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
